@@ -1,25 +1,29 @@
 #include <stdio.h>
-
-int main()
+/**
+ * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
+ *
+ * Return: Always 0.
+ */
+int main(void)
 {
-    int a = 1, b = 2, c, i;
+	int i;
+	unsigned long int num_a = 0;
+	unsigned long int num_b = 1;
+	unsigned long int temp = 0;
 
-    printf("%d, %d, ", a, b);
-
-    for (i = 3; i <= 98; i++)
-    {
-        c = a + b;
-        printf("%d", c);
-        if (i != 98)
-        {
-            printf(", ");
-        }
-        a = b;
-        b = c;
-    }
-
-    printf("\n");
-
-    return 0;
+	i = 0;
+	while (i < 98)
+	{
+		temp = num_a + num_b;
+		num_a = num_b;
+		num_b = temp;
+		printf("%lu", num_b);
+		if (i != 49)
+		{
+			printf(", ");
+		}
+		i++;
+	}
+	printf("\n");
+	return (0);
 }
-
